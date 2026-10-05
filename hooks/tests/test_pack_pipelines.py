@@ -84,3 +84,21 @@ def test_review_draft_render_path(pack):
     for f in ("render.mjs", "finish.mjs"):
         subprocess.run(["node", "--check", str(PACKS / pack / "machinery" / "scripts" / f)],
                        check=True, capture_output=True, timeout=30)
+
+
+def test_product_capture_is_bundled_and_loadable():
+    # 2026-10-05 owner challenge: "make sure we indeed captured this
+    # capability before hallucinating that we could." The harness existed
+    # but was NOT runnable from a scaffold: the example config was never
+    # bundled and Playwright was resolved via the original worktree's
+    # layout (two directories above the reel). This pins the fix.
+    m = PACKS / "footage" / "machinery"
+    assert (m / "scripts" / "capture-product.mjs").exists()
+    assert (m / "scripts" / "lib" / "capture.mjs").exists()
+    assert (m / "scripts" / "playwright-resolve.mjs").exists()
+    assert (m / "scripts" / "capture.config.example.mjs").exists()
+    text = (m / "scripts" / "capture-product.mjs").read_text()
+    assert "REPO_ROOT, 'scripts/playwright-resolve" not in text  # old worktree path
+    for f in ("capture-product.mjs", "capture.config.example.mjs", "playwright-resolve.mjs"):
+        subprocess.run(["node", "--check", str(m / "scripts" / f)],
+                       check=True, capture_output=True, timeout=30)

@@ -190,10 +190,21 @@ equivalent for them. From then on every step refuses on drift (lesson 44).
 Tell the owner, in this order and nothing more:
 
 1. Where the project is and which form it uses.
-2. The one file they will approve next (`BRIEF.md`).
-3. That nothing has been sent anywhere, and nothing will be until they
+2. Footage form only, when the reel folder holds no recordings yet: say
+   that recordings are the next ingredient and offer BOTH paths in plain
+   words — record it themselves (Cmd-Shift-5, record the entire screen,
+   click through the product, stop from the menu bar) or have the studio
+   capture it: they provide the product URL, a login the studio may use,
+   and a plain-words list of screens/journeys; you write
+   `scripts/capture.config.mjs` WITH them from the bundled
+   `capture.config.example.mjs` (hosted products need `--allow-remote`),
+   then `npm run capture` drives a real browser and records real usage —
+   never fabricated data, and a product bug found on camera is documented
+   and routed around, per the footage skill.
+3. The one file they will approve next (`BRIEF.md`).
+4. That nothing has been sent anywhere, and nothing will be until they
    approve the script text for speech.
-4. "Run `/cmo:brief` when you are ready."
+5. "Run `/cmo:brief` when you are ready."
 
 ## Never
 

@@ -53,7 +53,7 @@ const outputDir = resolve(
 mkdirSync(outputDir, { recursive: true })
 
 const resolver = await import(
-  pathToFileURL(resolve(REPO_ROOT, 'scripts/playwright-resolve.mjs')).href
+  pathToFileURL(new URL('./playwright-resolve.mjs', import.meta.url).pathname).href
 )
 const chromium = await resolver.resolveChromium()
 const browser = await chromium.launch({ headless: !headed })

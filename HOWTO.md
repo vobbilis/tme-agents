@@ -8,11 +8,13 @@ knowledge is needed — that is the point.
 
 One of three things:
 
-- **Screen recordings** of real work, or a running product you can record.
-  Record generously: full screen, native quality, no need to be tidy.
-  One tip from experience: rename recordings to something simple like
-  `demo-session.mov` — the names macOS gives them contain an invisible
-  character that causes trouble later.
+- **Screen recordings** of real work — or just a product and nothing
+  recorded yet. Both are fine; see "If you have nothing recorded yet"
+  below. If you do record yourself, record generously: full screen,
+  native quality, no need to be tidy. One tip from experience: rename
+  recordings to something simple like `demo-session.mov` — the names
+  macOS gives them contain an invisible character that causes trouble
+  later.
 - **An architecture story** — systems and how they connect, told to an
   audience that is worried about something.
 - **A way of working** — a model, a method, a policy. Nothing to show on
@@ -23,6 +25,26 @@ pieces. You will never be asked to edit video, fix audio, or read an
 error trace. Everything you do is one of four things: answer a question,
 approve a piece of text, say yes or no to a picture, or watch a cut and
 say what bothered you.
+
+## If you have nothing recorded yet
+
+You do not need to know how to capture a product. Two ways, pick either:
+
+**Record it yourself.** Press Cmd-Shift-5, choose "Record Entire Screen",
+click through the product the way you'd show it to a customer, then stop
+from the little icon in the menu bar. That file is your footage. Don't
+worry about mistakes or pauses — only the good parts end up in the film.
+
+**Or let the studio record it.** Tell it, in the session, that you have a
+product but no recording. Give it the product's web address, a login it
+may use, and describe in plain words which screens and journeys you want
+shown — "log in, open the dashboard, walk through creating an alert". The
+studio sets the capture up with you from that description, then drives a
+real browser through the real product and records it, exactly as a human
+would see it. It never fakes data or doctors a screen; if it runs into a
+product bug on the way, it documents the bug and finds another honest
+route rather than hiding it. This is the youngest part of the studio, so
+expect a little more back-and-forth here than elsewhere.
 
 ## Starting
 
