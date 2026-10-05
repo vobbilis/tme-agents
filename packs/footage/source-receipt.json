@@ -1,0 +1,176 @@
+{
+  "pack": "footage",
+  "copiedAt": "2026-10-03",
+  "sourceWorktree": "/Users/vobbilis/go/src/github.com/hpe-hybrid-cloud/itom-portal-prototype-hyperframes-reel",
+  "branch": "media/hyperframes-reel-toolkit",
+  "commit": "53603e8b3c55cd9502f1691225508a3839fdf016",
+  "note": "Machinery (scripts, tests, package pins, hyperframes.json, frame.md, vendor, css) copied unchanged. scenes.reference.mjs and index.reference.html are the reference subject, not templates. Fonts byte-identical to itom-portal-prototype/app/public/fonts @ 5c90c52.",
+  "referenceFilms": [
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/renders/opsramp-sdlc-first-cut-base.mp4",
+      "sha256": "087bfe19441d00c911d6a2a6f77844e4a224ece5a4863580f3e43e0dd70d6e04"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/renders/opsramp-sdlc-first-cut.mp4",
+      "sha256": "ff297b3c0318558fa11b2b12843cad4f005289aa56d4b71d7e36a0830db8a52a"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/renders/opsramp-sdlc-second-cut-base.mp4",
+      "sha256": "d396542ba8b4a7b3eb677771ef9aa833065af1b8bbefd9ba94d5ad4437ead3e9"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/renders/opsramp-sdlc-second-cut.mp4",
+      "sha256": "9a5a851c3c5884959652898d6749f0d6c8a9cf74158562f6c26d735837ae55f0"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/renders/opsramp-sdlc-third-cut-base.mp4",
+      "sha256": "4127bd4139fa82318a5994e22d93d3d3e3402e8a3b88b4febaf56a4c2147621b"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/renders/opsramp-sdlc-third-cut.mp4",
+      "sha256": "768560b0b3cfb556879559e076e70d92f9ed00c9150e24cd5243d8584e3dfa7d"
+    }
+  ],
+  "files": [
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/BRIEF.md",
+      "sha256": "419d5ff8ee89182d709c46f5d5c5e4a6e3915b3efd1950a1bd2874f196eba609"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/FLOW_RESEARCH.md",
+      "sha256": "70142926b6f8eb593ac9e56a20dd93f74a29c286cf6be4faa566cc7740008489"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/SCRIPT.md",
+      "sha256": "d581a96df658b9911531b676568ca657efaadf4dc1ce5bc4989fef8a93306dfb"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/STORYBOARD.md",
+      "sha256": "0122bdb82342d9b8978b88fc50d7a9788370de0a349bb49c0c5de4575c9b2d69"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/VALIDATION_REPORT.md",
+      "sha256": "d65951c5714bffc32bfade91e017a3a8947bb8e956dcc7c09bbe6bf178abb81c"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/frame.md",
+      "sha256": "b122b8c042418e27c3584c68a22298f3e361d8c07a8a7f4eb66128cecc76a3b1"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/hyperframes.json",
+      "sha256": "095c0b8ae478fca6414c9898ebdb0712b5522a6918cb2d2e736c1ad4bc1e5d4f"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/index.html",
+      "sha256": "507d6b9ad6d92ffd674f1e0421ed5f06774787135564354b544e268af87c32ed"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/package-lock.json",
+      "sha256": "7b85319223750145079194f1e1810b800e4bb82d795c3a0e3c5a8580936f3723"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/package.json",
+      "sha256": "b066d7cff2f0d8cbad680ac7431f20f3ec21857c8cae87941546c6ee6ab67fae"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scenes.mjs",
+      "sha256": "966be238b860917bb066396438d3c70b87ad25e74d7ccd4e32dbdb6cccee0652"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/animation-map.mjs",
+      "sha256": "fbefee561925c05c16b61db619e0e0e4974fcb153cb331ebb7d07c2e96d8d98e"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/build.mjs",
+      "sha256": "34ebbe052e5ad1d386d127e1739fba3f8f6977321544df276237d9306a441b0a"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/capture-product.mjs",
+      "sha256": "42aa18ab4d35aa6ae5d2e272a9ae6f78e5308e3932e4af47959c2d2d5ffd6b4e"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/check.mjs",
+      "sha256": "a0226f4e0c541147111628f12d85cd7a8597f166c19fd9d60ef639bdeb2ea36f"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/doctor.mjs",
+      "sha256": "b57ad812405ef8db928f66991b4497ccfa0dcc78c1350a75e3a7674466c2ef05"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/finish.mjs",
+      "sha256": "206b023fb350797584155e81af6adcbaee1adee66e3dc6fa3d56e3c25fa38d6c"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/hf.mjs",
+      "sha256": "d3ff0f68d5980265910b80d7609c0282f04242f3ad6698ac7c2f3f04a4cca717"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/inspect-frames.swift",
+      "sha256": "f3549d439a28f77403e2dd29db727552783f7b942271a8221cd05b02a60a6a89"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/lib/capture.mjs",
+      "sha256": "6bb91ef9e7f85517cacf2403f0829da1a14c61b9c0eaece1943fe3435b708bf0"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/lib/draft-render.mjs",
+      "sha256": "545b3c0adda133db95eddb96f22c488609bba25f7b481af2f4eb62da966bdaec"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/lib/project.mjs",
+      "sha256": "ba0c11c1bdd0150602139f0ab60d4b97ecd187659856f0ef78f28d21614d0939"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/lib/render-scene.mjs",
+      "sha256": "a53f0ad025ef4b2bf61fbaccd48cf495abec41f3ec3aa5907b09afa3405cdd47"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/lib/shots.mjs",
+      "sha256": "da540cb6279261ccce67db4fbaa1336e4d23c74abf54265520f84caa0da1bd7d"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/lib/speech.mjs",
+      "sha256": "906f5bfbb58eec64eaddb28bc6ed1ee5321453808b5018a4d92a8c8577548aa9"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/lib/timeline.mjs",
+      "sha256": "f1921d9df441f5f1cec15e27e8a74a2abd916dd62c169b5a7d257c56be72598b"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/narrate.mjs",
+      "sha256": "a905e945cc07d511dc685cd40a1d98c75763dbf159ccc1efc91a4a8045d2a59c"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/prepare-focus.mjs",
+      "sha256": "620a131ac9a669622f40f8c9b7c9fa82c2504446adb6298059f4232e3f923a8e"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/prepare-footage.mjs",
+      "sha256": "e473fa578a3b673bef7aa4ba6c2b77687168f2250e21cf54a55afdbc2c585594"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/render.mjs",
+      "sha256": "cf9adb5665b429d7fabdb24c54cb8632e6a8facf80955e9bf1e649d241cc41c2"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/run-validation.mjs",
+      "sha256": "71485ce8f5890633b4bd251fa8fba6d8d533fa0ec5bc0dd7c7beee1ebef4611c"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/snapshot.mjs",
+      "sha256": "4819d4866fa93694b37ae978bceb332bc6bc81155c6282b38381b28701033b50"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/synthesize.py",
+      "sha256": "a09ced1f610cd0fa287f62b21f598a051d4d484da1303480f8955ae9fe69b2e0"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/scripts/verify.mjs",
+      "sha256": "5eb9df4ec9e7a5ab3b53ba094d316d4dbacd0cde9257b6a5ecfbfe881b93c0bf"
+    },
+    {
+      "path": "demo/hpe-opsramp-sdlc-demo/production/tests/draft.test.mjs",
+      "sha256": "e09a55c7934ac6a2831224cac512a8602287533724bb42466dc3c99d81fba7a3"
+    }
+  ]
+}

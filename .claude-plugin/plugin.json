@@ -1,0 +1,9 @@
+{
+  "name": "cmo",
+  "version": "0.2.0",
+  "description": "Our own technical marketing team: 7 /cmo:* commands, 5 craft skills, 4 marketing agents, H1-H6 enforcement hooks and 4 enforcement tools for producing claims-safe, brand-correct narrated product films. First end-to-end dry run completed 2026-10-04. Design: DESIGN.md.",
+  "author": {
+    "name": "Suresh Vobbilisetty"
+  },
+  "displayName": "cmo-plugin"
+}

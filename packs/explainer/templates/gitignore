@@ -1,0 +1,12 @@
+# production/.gitignore — generated and private material stays out of git.
+out/
+illustrations/
+storyboard.html
+__pycache__/
+node_modules/
+
+# Inputs (memo, documents) live in <reel>/ and are referenced by absolute or
+# ../ path from story.mjs. Add to <reel>/.gitignore:
+#   *.m4a
+#   *.mp4
+#   *.html   (only if a supplied document was copied in)

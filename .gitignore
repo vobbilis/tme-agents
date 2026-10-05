@@ -1,0 +1,14 @@
+# HPE Graphik is internally licensed: font binaries never enter git
+# (see packs/PROVISIONING.md for how a fresh clone gets them)
+packs/*/assets/fonts/*.otf
+
+# Internal reference material (study copies of a delivered internal film,
+# with fonts embedded in its SVGs) stays on provisioned machines only
+packs/explainer/reference/
+
+# Local noise
+__pycache__/
+.pytest_cache/
+.DS_Store
+hooks/*.log
+reports/

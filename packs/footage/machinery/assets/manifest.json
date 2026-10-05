@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "path": "assets/fonts/HPEGraphik-Bold.otf",
+      "sha256": "433f4afa90819c4c19ecca243780245cd8ad9d0b6c47966f2b83d1f1ca008ad9"
+    },
+    {
+      "path": "assets/fonts/HPEGraphik-Medium.otf",
+      "sha256": "91c9dabc237da988b3612e12c99472b2400d7e334010c016d568f3070933facb"
+    },
+    {
+      "path": "assets/fonts/HPEGraphik-Regular.otf",
+      "sha256": "1e0b9ed0c05c412e452e5682c934949bd4e10aaf6fd4f1eabcdcbf95d800df34"
+    },
+    {
+      "path": "assets/fonts/HPEGraphik-Semibold.otf",
+      "sha256": "ac37a50e8a072ec7c14155a97ccad61b5529f076e4da3cbdbc077cc81818cfa8"
+    },
+    {
+      "path": "assets/vendor/gsap.min.js",
+      "sha256": "c3a03a345e45bc954cd48c43f11572891f5dca7a5d99348d5bc14753a728618c"
+    }
+  ]
+}

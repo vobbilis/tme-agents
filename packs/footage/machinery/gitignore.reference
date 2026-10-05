@@ -1,0 +1,9 @@
+node_modules/
+assets/audio/
+assets/footage/
+reports/
+renders/
+snapshots/
+.hyperframes/
+.thumbnails/
+.waveform-cache/

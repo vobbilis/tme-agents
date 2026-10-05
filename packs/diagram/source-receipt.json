@@ -1,0 +1,164 @@
+{
+  "pack": "diagram",
+  "copiedAt": "2026-10-03",
+  "sourceWorktree": "/Users/vobbilis/go/src/github.com/hpe-hybrid-cloud/itom-portal-prototype-hyperframes-reel",
+  "branch": "media/hyperframes-reel-toolkit",
+  "commit": "53603e8b3c55cd9502f1691225508a3839fdf016",
+  "note": "Machinery (scripts, tests, package pins, hyperframes.json, frame.md, vendor, css) copied unchanged. scenes.reference.mjs and index.reference.html are the reference subject, not templates. Fonts byte-identical to itom-portal-prototype/app/public/fonts @ 5c90c52.",
+  "referenceFilms": [
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/renders/opsramp-onprem-architecture-journey-base.mp4",
+      "sha256": "e06b48f1abafe35614342698497464bc265b6fccf1ad32f9e67953376520b690"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/renders/opsramp-onprem-architecture-journey.mp4",
+      "sha256": "b9f51c66173828621b5cf7505504227d5e5cd1bed97fc8c0b0b27fbeee24ffaa"
+    }
+  ],
+  "files": [
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/AGENTS.md",
+      "sha256": "6361e5d1b78020e6a17a9c31685104d78cb538a080907ca21fd6f88ec21b7fd3"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/BRIEF.md",
+      "sha256": "4d2e41ed51f05239b7544fa91ca32401de3a65d5297bd5616f692de83da1349c"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/CLAUDE.md",
+      "sha256": "6361e5d1b78020e6a17a9c31685104d78cb538a080907ca21fd6f88ec21b7fd3"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/HYPERFRAMES_SKILLS.lock.json",
+      "sha256": "8c589c43093cbd79ceaf054ed1b7b08e4e117d77846fcd40d9b850803ca2bda9"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/SCREENPLAY.md",
+      "sha256": "ed9317b46c3aafe82f2139d1077c6fb4bc3c7e79390c61e5eb0beab126bb5daa"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/SCRIPT.md",
+      "sha256": "ebc4e4423efa9b8f17c917f26e88f023c5b4d8fd6eb1749213667f52b6668bf5"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/STORYBOARD.md",
+      "sha256": "b16602f2b8a3e276ad6daa04bc814bdd7938d3aaf660f614d724db3a79645c15"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/VALIDATION_REPORT.md",
+      "sha256": "a4e6e4d0122850292d5cc50ee984712648ff1a8287c17bffc8e2ff1131d1e997"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/capture.config.example.mjs",
+      "sha256": "a30da11df0b8d3683dfd1aa49fbc8a99dfe6ec8cbc40bccc0925cb0180da8f36"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/frame.md",
+      "sha256": "b122b8c042418e27c3584c68a22298f3e361d8c07a8a7f4eb66128cecc76a3b1"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/hyperframes.json",
+      "sha256": "095c0b8ae478fca6414c9898ebdb0712b5522a6918cb2d2e736c1ad4bc1e5d4f"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/index.html",
+      "sha256": "a3f2bf390f97463092fec68fe8c63432a9bab84c22225564a6ac02834c2352c4"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/package-lock.json",
+      "sha256": "7b85319223750145079194f1e1810b800e4bb82d795c3a0e3c5a8580936f3723"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/package.json",
+      "sha256": "b066d7cff2f0d8cbad680ac7431f20f3ec21857c8cae87941546c6ee6ab67fae"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/scenes.mjs",
+      "sha256": "15c7c1d3a0e43b61f3a7d92c5f2cfbd4a3aa08e41f31166cfc7257ae5cd10144"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/scripts/animation-map.mjs",
+      "sha256": "fbefee561925c05c16b61db619e0e0e4974fcb153cb331ebb7d07c2e96d8d98e"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/scripts/build.mjs",
+      "sha256": "6f667d243394bec9eafaabd3a78e56ea4731a489f7b1ded1e9c16e5a19944ad1"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/scripts/capture-product.mjs",
+      "sha256": "42aa18ab4d35aa6ae5d2e272a9ae6f78e5308e3932e4af47959c2d2d5ffd6b4e"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/scripts/check.mjs",
+      "sha256": "e8e74aa1be8e957712bc59ee2b42c493c6c0b819a29de01204d5743c76194b57"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/scripts/doctor.mjs",
+      "sha256": "b57ad812405ef8db928f66991b4497ccfa0dcc78c1350a75e3a7674466c2ef05"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/scripts/finish.mjs",
+      "sha256": "7dda5543377b508621e60ad5a32d60e1fde8952061646215e4e4057fcd758398"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/scripts/hf.mjs",
+      "sha256": "d3ff0f68d5980265910b80d7609c0282f04242f3ad6698ac7c2f3f04a4cca717"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/scripts/lib/capture.mjs",
+      "sha256": "6bb91ef9e7f85517cacf2403f0829da1a14c61b9c0eaece1943fe3435b708bf0"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/scripts/lib/diagram.mjs",
+      "sha256": "b9db5bdc82296f60f72e00f32c36a0f6b93687589c692577603807350b414d7e"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/scripts/lib/project.mjs",
+      "sha256": "ba0c11c1bdd0150602139f0ab60d4b97ecd187659856f0ef78f28d21614d0939"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/scripts/lib/render-scene.mjs",
+      "sha256": "f9ec14a81ada24c5724349bb136986ab129457021d98ce04164af873886a228b"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/scripts/lib/speech.mjs",
+      "sha256": "e698b0030b1f0fa55d4c9f04e1cee4942806f69bb77edea6ac071e730a59ad7a"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/scripts/lib/timeline.mjs",
+      "sha256": "dd0bb3d9e57004bd8f38d5e21a78ae84828db2922df5b685dc2a1e7b0f500e66"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/scripts/narrate.mjs",
+      "sha256": "a905e945cc07d511dc685cd40a1d98c75763dbf159ccc1efc91a4a8045d2a59c"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/scripts/render.mjs",
+      "sha256": "cf9adb5665b429d7fabdb24c54cb8632e6a8facf80955e9bf1e649d241cc41c2"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/scripts/run-validation.mjs",
+      "sha256": "71485ce8f5890633b4bd251fa8fba6d8d533fa0ec5bc0dd7c7beee1ebef4611c"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/scripts/snapshot.mjs",
+      "sha256": "4819d4866fa93694b37ae978bceb332bc6bc81155c6282b38381b28701033b50"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/scripts/synthesize.py",
+      "sha256": "a09ced1f610cd0fa287f62b21f598a051d4d484da1303480f8955ae9fe69b2e0"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/scripts/verify.mjs",
+      "sha256": "21c1d40121024f2579258c5326fce5426b5ef3cfec80e5473f14edce11b85ac4"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/tests/capture.test.mjs",
+      "sha256": "e35f8180e39b62a098686ab13f55212b9062aabb1427aae9049fb652ca2b1a29"
+    },
+    {
+      "path": "demo/opsramp-onprem-architecture-reel/tests/toolkit.test.mjs",
+      "sha256": "17fe3a2ac7fb984795cbbc365dd72ba367a48020556b0efe7b400535b065b750"
+    }
+  ]
+}

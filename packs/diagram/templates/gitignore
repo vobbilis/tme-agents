@@ -1,0 +1,15 @@
+# <reel>/production/.gitignore — generated and private material stays out of git.
+node_modules/
+assets/audio/
+assets/reference/
+reports/
+renders/
+snapshots/
+logs/
+.hyperframes/
+.thumbnails/
+.waveform-cache/
+compositions/
+STORYBOARD.md
+SCRIPT.md
+index.html

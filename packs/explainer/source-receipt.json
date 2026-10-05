@@ -1,0 +1,181 @@
+{
+  "pack": "explainer",
+  "copiedAt": "2026-10-03",
+  "sourceWorktree": "/Users/vobbilis/go/src/github.com/hpe-hybrid-cloud/itom-portal-prototype-ai-first-reel",
+  "branch": "media/ai-first-sdlc-auditor-reel",
+  "commit": "10e0d9926cdb2a8b1b0c4f3974fbf35ebf82a93f",
+  "note": "Machinery copied with imports rewritten (../ai-first-sdlc-reel/* -> ./lib/*, app/public/fonts -> assets/fonts). Reference film hash below. Fonts byte-identical to itom-portal-prototype/app/public/fonts @ 5c90c52.",
+  "referenceFilm": [
+    {
+      "id": "secops-story-cut-5",
+      "path": "demo/secops-ai-first-reel/out/hpe-opsramp-ai-first-security-story.mp4",
+      "sha256": "0120639fbdc576affc8ce3378a9f300259fcbc4c686290c922411d62ec866f61"
+    }
+  ],
+  "files": [
+    {
+      "path": "demo/secops-ai-first-reel/ASTRA_HANDOVER.md",
+      "sha256": "39ba947ae54e640bf00c061e552b47d9026d4a3ebe211924faa6a1a1a723e1ac"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/BRIEF.md",
+      "sha256": "266c5acb7743f97205a1f1347a0b5898547ed3637862b9e4c0e452b23bea7925"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/HANDOVER.md",
+      "sha256": "3cb9e573f3d0aaf0ee4dc4af167b3da086a10d37d688ad861a44f57b2bb4e57a"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/PRONUNCIATION_REVIEW.md",
+      "sha256": "815ab782c4527b0c9401462b82908ae7e7fe8515fcd374875ba962d4f1341c87"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/README.md",
+      "sha256": "cf2abed4565fbc3b6b14c5499818b1d2f1c52135efcfad1bf31b13d8be22e0bb"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/REVIEW_DISPOSITIONS.md",
+      "sha256": "300dc1ad1f7bf87e6e80e5b6f4570ed06c896df98f8c9318e603d6422f57f0de"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/SCREENPLAY.md",
+      "sha256": "7484d9b4325b8b9a444970ff85e2fc0868de0e182d2f711e900846da761823d5"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/SCRIPT.md",
+      "sha256": "debb71a0a8289f765376a8963cc910b773efe4f58b4549485836c6aadf024da7"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/STORYBOARD.md",
+      "sha256": "888ddf2537c36127843697bc07597b5ff7840cc90d373047c1a8588aeff16d1e"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/archive-cut.mjs",
+      "sha256": "989952e3acdf78dd4fb6001ec81606ffe5ce046c47fd8ad6ee7c588f26662033"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/build-board.mjs",
+      "sha256": "1fd0b0ffd422e8faf94067026fcf715cd636076bde3ba487b0008165a35b5ead"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/closing-motion.mjs",
+      "sha256": "c6b35b166f39bb25be0f04f4683f555f4e35a27a5db5d3f06a9e1cdaa5ebd213"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/finish.mjs",
+      "sha256": "743d69d9e4ebbf1255ac023b82f14a716cfe6a84dd9798e16e160095a87ad562"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/illustrations.mjs",
+      "sha256": "d37e677f957a4b64cee642b59174af923d0c55d2d5262294df813a624ee5a9a2"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/media.mjs",
+      "sha256": "dd4988bbcaba70423253abdf36d863d415dee3b7aad30fca9b5c5b8f5e79a2b3"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/narrate.mjs",
+      "sha256": "ea0ba69b1ea2c1b793eddfe2e52c8809a6d0b2f96b4c6b8da2eedf2ee191a1d8"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/production.mjs",
+      "sha256": "8edf907d4e6bf1646d38ee8d580deb187de586f2bd42aca2cf808df8cc8b65d8"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/pronunciation-probe.mjs",
+      "sha256": "f39fab779905cae73c4ed4729d95a1dd106d532bfa8098218dfc502218a247ab"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/pronunciation.mjs",
+      "sha256": "e95eb9e2065524bf55749ccb5eaf79292fdae415d9a86d1e21ae8dce049d9902"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/reel.test.mjs",
+      "sha256": "4cb8c522905bf4ccceca51bf9c4aaa6586cdf2986bb68dd69dd70c3436f5f778"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/render-closing.mjs",
+      "sha256": "1d1d82e31dab88384b2a27072ff319651f8c503c4b0181f14b73edd9607c06aa"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/review.mjs",
+      "sha256": "98da0eff9e723b5ed1b3a75c9c9e69969d5656baa800dd50ae845c7f2a13742b"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/story.mjs",
+      "sha256": "0bd2822d2700d07daa57e3344e2ad0cc7d479690b922cab1a48ff6a3a786638d"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/timing.mjs",
+      "sha256": "86f4690e0f497de595d287745ddbd5d317167be722c83b1059d9b6cf3185842b"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/verify.mjs",
+      "sha256": "6dc41f85fe857f8d4e9fd9c9b6d6bf9ab200f9de577d8e79d4cb95382196e06f"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/transcribe-pronunciation.py",
+      "sha256": "1ebd983a198fb6a970bcd02242cc33bea198f896c1ce85957e25478cf2359129"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/ASTRA_HANDOVER.md",
+      "sha256": "39ba947ae54e640bf00c061e552b47d9026d4a3ebe211924faa6a1a1a723e1ac"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/BRIEF.md",
+      "sha256": "266c5acb7743f97205a1f1347a0b5898547ed3637862b9e4c0e452b23bea7925"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/HANDOVER.md",
+      "sha256": "3cb9e573f3d0aaf0ee4dc4af167b3da086a10d37d688ad861a44f57b2bb4e57a"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/PRONUNCIATION_REVIEW.md",
+      "sha256": "815ab782c4527b0c9401462b82908ae7e7fe8515fcd374875ba962d4f1341c87"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/README.md",
+      "sha256": "cf2abed4565fbc3b6b14c5499818b1d2f1c52135efcfad1bf31b13d8be22e0bb"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/REVIEW_DISPOSITIONS.md",
+      "sha256": "300dc1ad1f7bf87e6e80e5b6f4570ed06c896df98f8c9318e603d6422f57f0de"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/SCREENPLAY.md",
+      "sha256": "7484d9b4325b8b9a444970ff85e2fc0868de0e182d2f711e900846da761823d5"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/SCRIPT.md",
+      "sha256": "debb71a0a8289f765376a8963cc910b773efe4f58b4549485836c6aadf024da7"
+    },
+    {
+      "path": "demo/secops-ai-first-reel/STORYBOARD.md",
+      "sha256": "888ddf2537c36127843697bc07597b5ff7840cc90d373047c1a8588aeff16d1e"
+    },
+    {
+      "path": "demo/ai-first-sdlc-reel/speech.mjs",
+      "sha256": "7a2c0583d4ceba4adb12ec623b0464d5ef61cfa300365cb3c3cc8bdafbf8194b"
+    },
+    {
+      "path": "demo/ai-first-sdlc-reel/tools.mjs",
+      "sha256": "c3b2a65d94dbc97e77f24a32bb37daaea58d3cec1996e206adb11e6c1c72d623"
+    },
+    {
+      "path": "demo/ai-first-sdlc-reel/camera.mjs",
+      "sha256": "84622b58d8efdd5724ffd7033bbf34fb363b2d5dbf930ae7c32e1c5a09f4378f"
+    },
+    {
+      "path": "demo/ai-first-sdlc-reel/narrator.mjs",
+      "sha256": "cc7dcc3124c2796b9f8e71171c963e7f4e85dec06e0aa759c9fb9cf881cd77a2"
+    },
+    {
+      "path": "demo/ai-first-sdlc-reel/synthesize.py",
+      "sha256": "a4777bba149813d9d3a6cdb97c36568fd8353244fcdd5acbaf65afa4a49d2a60"
+    },
+    {
+      "path": "scripts/playwright-resolve.mjs",
+      "sha256": "e925058f8bb768dad54b3d018224684a15c712dc1ad576bec31e97fbebdd919d"
+    }
+  ]
+}

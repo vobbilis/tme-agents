@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/heygen-com/hyperframes",
+  "ref": "1b8f8a43d43bc2456075215b066b23e11d821435",
+  "package": "hyperframes@0.8.62",
+  "paths": [
+    "skills/hyperframes",
+    "skills/general-video",
+    "skills/product-launch-video",
+    "skills/hyperframes-core",
+    "skills/hyperframes-animation",
+    "skills/hyperframes-keyframes",
+    "skills/hyperframes-creative",
+    "skills/hyperframes-cli",
+    "skills/hyperframes-audio",
+    "skills/media-use"
+  ]
+}

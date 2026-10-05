@@ -1,0 +1,14 @@
+# production/.gitignore — generated and private material stays out of git.
+node_modules/
+assets/audio/
+assets/footage/
+reports/
+renders/
+snapshots/
+.hyperframes/
+.thumbnails/
+.waveform-cache/
+
+# Raw recordings live one level up (<reel>/*.mov). Add this to <reel>/.gitignore:
+#   *.mov
+#   *.mp4

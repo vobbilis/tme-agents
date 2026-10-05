@@ -1,0 +1,13 @@
+node_modules/
+assets/audio/
+assets/captures/
+reports/*.json
+reports/*.txt
+reports/animation-map/
+reports/encoded-frames/
+reports/encoded-transitions/
+reports/contact-sheet/
+renders/
+snapshots/
+.hyperframes/
+*.partial
