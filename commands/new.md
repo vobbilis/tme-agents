@@ -194,13 +194,17 @@ Tell the owner, in this order and nothing more:
    that recordings are the next ingredient and offer BOTH paths in plain
    words — record it themselves (Cmd-Shift-5, record the entire screen,
    click through the product, stop from the menu bar) or have the studio
-   capture it: they provide the product URL, a login the studio may use,
-   and a plain-words list of screens/journeys; you write
-   `scripts/capture.config.mjs` WITH them from the bundled
-   `capture.config.example.mjs` (hosted products need `--allow-remote`),
-   then `npm run capture` drives a real browser and records real usage —
-   never fabricated data, and a product bug found on camera is documented
-   and routed around, per the footage skill.
+   capture a DEMO INSTANCE: the adapter films fabricated data only (the
+   validator refuses anything else) and launches its own Chromium — it
+   cannot reuse the owner's browser session. You write
+   `scripts/capture.config.mjs` WITH the owner from the bundled
+   `capture.config.example.mjs` (login = scripted steps, seeded
+   localStorage, or `--headed` + the owner logs in while initialize()
+   waits; non-localhost needs `--allow-remote`), then `npm run capture`
+   navigates the described screens with ready/proof checks and records.
+   A product bug found on camera is documented and routed around, per
+   the footage skill. Real day-to-day usage = the owner records their own
+   screen; the register and privacy review cover it.
 3. The one file they will approve next (`BRIEF.md`).
 4. That nothing has been sent anywhere, and nothing will be until they
    approve the script text for speech.

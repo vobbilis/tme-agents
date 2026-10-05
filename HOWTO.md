@@ -35,16 +35,20 @@ click through the product the way you'd show it to a customer, then stop
 from the little icon in the menu bar. That file is your footage. Don't
 worry about mistakes or pauses — only the good parts end up in the film.
 
-**Or let the studio record it.** Tell it, in the session, that you have a
-product but no recording. Give it the product's web address, a login it
-may use, and describe in plain words which screens and journeys you want
-shown — "log in, open the dashboard, walk through creating an alert". The
-studio sets the capture up with you from that description, then drives a
-real browser through the real product and records it, exactly as a human
-would see it. It never fakes data or doctors a screen; if it runs into a
-product bug on the way, it documents the bug and finds another honest
-route rather than hiding it. This is the youngest part of the studio, so
-expect a little more back-and-forth here than elsewhere.
+**Or let the studio record it — from a demo instance.** Tell it, in the
+session, that you have a product but no recording. Two things to know,
+both deliberate: the studio opens its own browser window (it cannot see
+or reuse your Chrome), and it will only film a product running with
+made-up demo data — it refuses live systems holding real customer data,
+so nothing private can end up on film by accident. You give it the demo
+instance's address and describe in plain words which screens to show;
+for login, either give it the steps or have it open the window visibly,
+log in yourself, and it continues once your first screen is really there.
+It then navigates screen by screen, proves each one is actually showing
+what you asked (not a spinner), and records. If it runs into a product
+bug on the way, it documents the bug and finds another honest route
+rather than hiding it. This is the youngest part of the studio, so expect
+a little more back-and-forth here than elsewhere.
 
 ## Starting
 
