@@ -16,8 +16,9 @@ delivery, closing its production record with "This film is done." Every
 `/cmo:*` command prints usage on `/cmo:<x> help`.
 
 The teammate-facing introduction — what this is, the three film forms, the
-craft it hands you, how to use it — is `docs/cmo-studio.html` in the aigile
-repo (standalone page; not part of the coding-flow docs by owner decision).
+craft it hands you, how to use it — is `docs/index.html` in this repo,
+ready to serve directly from GitHub Pages. `INSTALL.md` and `HOWTO.md` are
+the plain-language companions for getting set up and making a film.
 
 Still open before handing to a teammate: distribution packaging (this is
 one local directory loaded with `--plugin-dir`) and the observed

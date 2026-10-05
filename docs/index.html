@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The CMO Flow — Technical Marketing Films, End to End</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap');
+
+    :root {
+      --ink: #1a1a1a;
+      --paper: #f5f2eb;
+      --cream: #ede9df;
+      --rule: #d4cfc2;
+      --accent: #c84b2f;
+      --blue: #2a5fa5;
+      --green: #2d7a4f;
+      --gold: #b08a2e;
+      --muted: #7a7468;
+      --teal: #1f7a8c;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.7;
+      padding: 0;
+    }
+
+    /* ── Masthead ── */
+    .masthead {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 64px 48px 56px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .masthead::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: repeating-linear-gradient(0deg,
+          transparent, transparent 39px,
+          rgba(255, 255, 255, 0.04) 39px, rgba(255, 255, 255, 0.04) 40px);
+      pointer-events: none;
+    }
+
+    .masthead-inner { max-width: 900px; margin: 0 auto; position: relative; }
+
+    .masthead-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .masthead h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 300;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .masthead h1 em { font-style: italic; color: #c8c4b8; }
+
+    .masthead-sub {
+      font-size: 18px;
+      font-weight: 300;
+      color: #9c9890;
+      max-width: 620px;
+      line-height: 1.5;
+    }
+
+    .masthead-meta { margin-top: 40px; display: flex; gap: 32px; flex-wrap: wrap; }
+
+    .meta-item {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: #6a6860;
+      text-transform: uppercase;
+    }
+
+    .meta-item span {
+      color: #c8c4b8;
+      display: block;
+      font-size: 13px;
+      letter-spacing: 0;
+      margin-top: 2px;
+      text-transform: none;
+    }
+
+    /* ── TOC ── */
+    .toc-bar {
+      background: var(--cream);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 48px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .toc-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+    }
+
+    .toc-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 14px 16px;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .toc-link:hover, .toc-link.active { color: var(--ink); border-color: var(--accent); }
+
+    .toc-arch-group {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-left: 12px;
+      padding-left: 16px;
+      border-left: 1px solid var(--rule);
+      align-self: stretch;
+    }
+
+    .toc-arch-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--paper);
+      background: var(--ink);
+      padding: 3px 7px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-right: 4px;
+    }
+
+    .toc-link-ext {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--blue);
+      text-decoration: none;
+      padding: 5px 10px;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      white-space: nowrap;
+      transition: color 0.15s, background 0.15s, border-color 0.15s;
+      align-self: center;
+    }
+
+    .toc-link-ext:hover { color: var(--paper); background: var(--blue); border-color: var(--blue); }
+
+    /* ── Page body ── */
+    .page { max-width: 900px; margin: 0 auto; padding: 0 48px 80px; }
+
+    .chapter { margin-top: 80px; padding-top: 48px; border-top: 2px solid var(--ink); }
+
+    .chapter-number {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .chapter h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 300;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+
+    .chapter-cmd {
+      font-family: 'DM Mono', monospace;
+      font-size: 14px;
+      color: var(--accent);
+      background: rgba(200, 75, 47, 0.08);
+      padding: 4px 10px;
+      border-radius: 3px;
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+
+    .section { margin-top: 48px; }
+
+    .section h3 {
+      font-size: 21px;
+      font-weight: 400;
+      letter-spacing: -0.3px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    p { margin-bottom: 16px; color: #2a2820; }
+
+    .lead {
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 28px;
+      padding-left: 20px;
+      border-left: 3px solid var(--rule);
+      line-height: 1.5;
+    }
+
+    .pullquote {
+      margin: 40px 0;
+      padding: 24px 32px;
+      background: var(--cream);
+      border-left: 4px solid var(--accent);
+      font-size: 19px;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .pullquote cite {
+      display: block;
+      font-size: 12px;
+      font-style: normal;
+      font-family: 'DM Mono', monospace;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .enf-table {
+      display: block;
+      overflow-x: auto;
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+      margin: 24px 0;
+    }
+
+    .enf-table th {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: left;
+      padding: 8px 12px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .enf-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--rule);
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    .enf-table tr:hover td { background: var(--cream); }
+
+    .enf-table td:first-child {
+      font-family: 'DM Mono', monospace;
+      font-size: 15px;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .skill-card {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 16px 18px;
+    }
+
+    .skill-card .skill-name {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .skill-card .skill-where {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+      font-style: italic;
+    }
+
+    .skill-card .skill-rule { font-size: 13px; line-height: 1.5; color: var(--ink); }
+
+    code {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85em;
+      background: rgba(0, 0, 0, 0.07);
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+
+    .phase-list { list-style: none; margin: 24px 0; }
+
+    .phase-item {
+      display: flex;
+      gap: 20px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: flex-start;
+    }
+
+    .phase-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      background: rgba(200, 75, 47, 0.08);
+      padding: 4px 8px;
+      border-radius: 3px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .phase-content strong {
+      display: block;
+      font-weight: 400;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .phase-content p { font-size: 14px; color: var(--muted); margin: 0; line-height: 1.5; }
+
+    .callout { border-radius: 4px; padding: 18px 22px; margin: 24px 0; font-size: 15px; line-height: 1.6; }
+    .callout-novice { background: rgba(42, 95, 165, 0.07); border-left: 3px solid var(--blue); }
+    .callout-advanced { background: rgba(45, 122, 79, 0.07); border-left: 3px solid var(--green); }
+
+    .callout-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .callout-novice .callout-label { color: var(--blue); }
+    .callout-advanced .callout-label { color: var(--green); }
+
+    .cmd-trio {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 32px 0;
+    }
+
+    .cmd-card { background: var(--cream); padding: 24px; text-align: center; }
+    .cmd-card .cmd-name { font-family: 'DM Mono', monospace; font-size: 14px; color: var(--accent); margin-bottom: 8px; }
+    .cmd-card .cmd-arrow { font-size: 24px; color: var(--rule); margin: 8px 0; }
+    .cmd-card .cmd-artifact { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--teal); margin-bottom: 10px; }
+    .cmd-card .cmd-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    @media (max-width: 720px) {
+      .cmd-trio { grid-template-columns: 1fr; }
+      .masthead, .toc-bar { padding-left: 24px; padding-right: 24px; }
+      .page { padding-left: 24px; padding-right: 24px; }
+    }
+
+    .footer {
+      margin-top: 80px;
+      padding-top: 24px;
+      border-top: 2px solid var(--ink);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════════ -->
+  <!-- MASTHEAD                                                        -->
+  <!-- ══════════════════════════════════════════════════════════════ -->
+  <div class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-eyebrow">Creative Flow · Technical Marketing</div>
+      <h1>Your Own <em>Technical Marketing</em> Team</h1>
+      <div class="masthead-sub">
+        The CMO flow turns a conversation into a finished, narrated technical film —
+        a demo reel, an architecture story, or an explainer — made accessible to
+        architects and product managers alike. You bring the subject and the judgment;
+        it brings the filmmaking.
+      </div>
+      <div class="masthead-meta">
+        <div class="meta-item">Commands<span>/cmo:new → /cmo:brief → /cmo:screenplay → /cmo:deliver</span></div>
+        <div class="meta-item">Platform<span>Claude Code CLI</span></div>
+        <div class="meta-item">Film forms<span>Footage · Diagram · Explainer</span></div>
+        <div class="meta-item">Lineage<span>Distilled from seven delivered films</span></div>
+        <div class="meta-item">Version<span>v0.2 · October 2026</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════ -->
+  <!-- TOC                                                             -->
+  <!-- ══════════════════════════════════════════════════════════════ -->
+  <div class="toc-bar">
+    <div class="toc-inner">
+      <a class="toc-link" href="#what">What This Is</a>
+      <a class="toc-link" href="#forms">Three Film Forms</a>
+      <a class="toc-link" href="#craft">The Craft</a>
+      <a class="toc-link" href="#team">The Team</a>
+      <a class="toc-link" href="#howto">How To Use It</a>
+      <a class="toc-link" href="#trust">Why You Can Trust It</a>
+    </div>
+  </div>
+
+  <div class="page">
+
+    <!-- ══════════════════════════════════════════════════════════════ -->
+    <!-- WHAT THIS IS                                                    -->
+    <!-- ══════════════════════════════════════════════════════════════ -->
+    <div class="chapter" id="what">
+      <div class="chapter-number">Introduction</div>
+      <h2>A Film Studio You Talk To</h2>
+
+      <p class="lead">
+        You have something worth showing — a working product, an architecture, a way of
+        working. Turning that into a watchable, narrated film normally takes an editor, a
+        writer, a sound engineer, and weeks. The CMO flow is those people, as a plugin.
+      </p>
+
+      <p>
+        This is not a coding flow. Nothing here writes application code or opens pull
+        requests. It is a <strong>creative flow</strong>: a production pipeline for short
+        technical films, run as a conversation inside Claude Code. The crew behind it was
+        distilled from seven real delivered films — the hard-won lessons about story,
+        narration, timing, footage honesty, and finishing are built into the tools, so you
+        don't have to know any of them to get a professional result.
+      </p>
+
+      <p>
+        You participate the way a film's <em>owner</em> does, and only that way. Everything
+        you are asked to do is one of four actions:
+      </p>
+
+      <table class="enf-table">
+        <tr><th>You do</th><th>For example</th></tr>
+        <tr><td>Answer a question</td><td>"Who watches this, and what should they leave believing?"</td></tr>
+        <tr><td>Approve text</td><td>The narration script, before any voice is synthesized</td></tr>
+        <tr><td>Say yes or no to a picture</td><td>"Is what the narrator names readable and in frame?"</td></tr>
+        <tr><td>Watch a cut and give notes</td><td>"At 0:41 the voice feels slow" — the next cut arrives minutes later</td></tr>
+      </table>
+
+      <p>
+        Everything else — writing the screenplay, timing every reveal to the narrator's
+        words, cutting excerpts from your recordings, mixing the audio to broadcast
+        loudness, producing captions and chapters — happens behind those four actions.
+        When something goes wrong in the machinery, you are told what to change in plain
+        English, never shown an error trace.
+      </p>
+
+      <div class="callout callout-novice">
+        <div class="callout-label">Who this is for</div>
+        Architects who want their architecture told as a story. Product managers who need a
+        demo film that doesn't overclaim. Anyone who can describe what a film should say but
+        has never edited one. No video, audio, or film-production experience is assumed —
+        and no coding is involved beyond typing commands into Claude Code.
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════════ -->
+    <!-- THREE FORMS                                                     -->
+    <!-- ══════════════════════════════════════════════════════════════ -->
+    <div class="chapter" id="forms">
+      <div class="chapter-number">Chapter 01</div>
+      <h2>Three Film Forms</h2>
+
+      <p class="lead">
+        The first question the studio ever asks you is "what do you have to show?"
+        The answer picks one of three proven film forms. One form per film — never mixed.
+      </p>
+
+      <div class="cmd-trio">
+        <div class="cmd-card">
+          <div class="cmd-name">Footage</div>
+          <div class="cmd-arrow">⬒</div>
+          <div class="cmd-artifact">10–15 minutes</div>
+          <div class="cmd-desc">You have real screen recordings of real work, or a running
+            product to capture. The film shows the actual evidence — excerpts play at true
+            speed, failures stay in, and every clip carries its provenance label.</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">Diagram</div>
+          <div class="cmd-arrow">⬓</div>
+          <div class="cmd-artifact">10–13 minutes</div>
+          <div class="cmd-desc">You have systems and how they connect, for an audience with
+            a worry. The film opens on that worry as a question, answers it in ten seconds,
+            then earns the answer act by act with animated diagrams.</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">Explainer</div>
+          <div class="cmd-arrow">⬔</div>
+          <div class="cmd-artifact">5–6 minutes</div>
+          <div class="cmd-desc">You have a way of working, a model, or a policy — nothing to
+            show on screen. The film builds illustrated plates that progress as the
+            narrator speaks, closing with a single animated payoff.</div>
+        </div>
+      </div>
+
+      <p>
+        The lengths are suggestions from films that worked, not rules. Your film's length,
+        scene count, and pacing come from your brief and your screenplay — the studio asks;
+        it never assumes.
+      </p>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════════ -->
+    <!-- THE CRAFT                                                       -->
+    <!-- ══════════════════════════════════════════════════════════════ -->
+    <div class="chapter" id="craft">
+      <div class="chapter-number">Chapter 02</div>
+      <h2>The Filmmaking It Hands You</h2>
+
+      <p class="lead">
+        Five crafts, learned the expensive way across seven productions, are packaged as
+        skills the studio applies on your behalf. This is what you get without asking.
+      </p>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-name">Story Craft</div>
+          <div class="skill-where">the screenwriter</div>
+          <div class="skill-rule">Scene titles that are conclusions. One idea per scene. Open
+            on the idea, close by returning to it. A failure is a scene, not an
+            embarrassment. Close with an invitation, never a sales pitch.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-name">Narration</div>
+          <div class="skill-where">the voice director</div>
+          <div class="skill-rule">A consistent professional voice, paced to your taste.
+            Acronyms spoken correctly while captions keep real spelling. The narration is
+            even checked by a speech recognizer and flagged for your ear.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-name">Timing &amp; Sync</div>
+          <div class="skill-where">the editor</div>
+          <div class="skill-rule">Every on-screen reveal lands on the exact spoken word that
+            names it. Change one sentence and everything downstream re-times itself.
+            No drift, no guesswork.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-name">Footage Honesty</div>
+          <div class="skill-where">the documentarian</div>
+          <div class="skill-rule">Excerpts always play at real speed. Anything a viewer could
+            misread gets an on-screen label. Regions you exclude — a lock screen, a
+            colleague's name — physically cannot appear in a cut.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-name">Footage Comprehension</div>
+          <div class="skill-where">the camera operator</div>
+          <div class="skill-rule">The studio can watch your recording for you — it reads the
+            text on screen, frame by frame, and presents a summary of what happens when.
+            You describe which parts belong in the film and what deserves emphasis; the
+            camera then zooms to the exact region the narrator is naming, re-framing as
+            the narration moves on.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-name">Finishing</div>
+          <div class="skill-where">the post-production house</div>
+          <div class="skill-rule">Broadcast loudness, selectable captions, chapter marks,
+            contact sheets, and a verification pass on the final file — the same delivery
+            standard every time, automatically.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-name">Visual System</div>
+          <div class="skill-where">the art director</div>
+          <div class="skill-rule">The HPE brand system is baked in: HPE Graphik type and the
+            official palette ship with every film form, so what comes out is on-brand
+            without a designer in the loop. Color is grammar — green means structure,
+            amber means a real boundary or risk. Motion follows meaning; nothing bounces
+            or spins.</div>
+        </div>
+      </div>
+
+      <div class="pullquote">
+        The script is the single source of truth. You edit words; the studio regenerates
+        the film. You never touch a timeline, an audio track, or an editing tool.
+        <cite>The one rule that makes everything else possible</cite>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════════ -->
+    <!-- THE TEAM                                                        -->
+    <!-- ══════════════════════════════════════════════════════════════ -->
+    <div class="chapter" id="team">
+      <div class="chapter-number">Chapter 03</div>
+      <h2>Four Reviewers Who Cannot Say Yes</h2>
+
+      <p class="lead">
+        Alongside the crew, four marketing agents review the work. They are deliberately
+        powerless: they can flag, list, and record — they can never approve. Approval is
+        yours alone.
+      </p>
+
+      <table class="enf-table">
+        <tr><th>Agent</th><th>Watches for</th></tr>
+        <tr>
+          <td>fact-checker</td>
+          <td>Every sentence your evidence doesn't support, every number without a source,
+            every promotional word. Optional — offered before each draft reaches you, and
+            your "no thanks" is simply recorded.</td>
+        </tr>
+        <tr>
+          <td>sync-editor</td>
+          <td>Reveals that land before the narrator says the word, scenes that end in
+            awkward silence, cuts crowding a transition.</td>
+        </tr>
+        <tr>
+          <td>privacy-reviewer</td>
+          <td>Names, emails, credentials, or notifications readable anywhere in your
+            footage — listed with timestamps for a human to clear. It never clears
+            anything itself.</td>
+        </tr>
+        <tr>
+          <td>producer</td>
+          <td>Writes the final production record from receipts only. If no human has
+            watched the finished film, the record says, in writing,
+            <code>human review: NOT RECORDED</code> — and the film is not called done.</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════════ -->
+    <!-- HOW TO USE IT                                                   -->
+    <!-- ══════════════════════════════════════════════════════════════ -->
+    <div class="chapter" id="howto">
+      <div class="chapter-number">Chapter 04</div>
+      <h2>From Idea to Delivered Film</h2>
+      <div class="chapter-cmd">/cmo:new → /cmo:brief → /cmo:screenplay → /cmo:cuts → /cmo:assemble → /cmo:review → /cmo:deliver</div>
+
+      <p class="lead">
+        Seven commands, each a stage with a human gate. You run them in order, in a Claude
+        Code session opened in your film's folder. Each one tells you what the next one is.
+      </p>
+
+      <ol class="phase-list">
+        <li class="phase-item">
+          <span class="phase-num">/cmo:new</span>
+          <div class="phase-content">
+            <strong>Start the film.</strong>
+            <p>One question: what do you have to show? It picks the form, sets up the
+              project folder, checks your machine has everything needed, and reports any
+              gap in plain English. Five minutes.</p>
+          </div>
+        </li>
+        <li class="phase-item">
+          <span class="phase-num">/cmo:brief</span>
+          <div class="phase-content">
+            <strong>Freeze what the film is allowed to say.</strong>
+            <p>It drafts the brief from what you've already told it — audience, takeaway,
+              sources — and you correct it once. For footage films it <em>watches each
+              recording for you</em>: it reads the on-screen text frame by frame and
+              presents a summary of what happens and when, so you don't have to scrub
+              through an hour of capture. You confirm what it shows, what it does
+              <em>not</em> prove, and which seconds must never appear. From here your
+              inputs are frozen; changing one is a deliberate, recorded decision.</p>
+          </div>
+        </li>
+        <li class="phase-item">
+          <span class="phase-num">/cmo:screenplay</span>
+          <div class="phase-content">
+            <strong>Write the story together.</strong>
+            <p>Scenes arrive in small groups for your reaction. Every narration line is
+              traced to something you said or something the evidence shows; anything
+              unconfirmed stops and asks you. It ends with one explicit gate: approve the
+              exact script text before any voice is synthesized. Nothing is sent anywhere
+              before that yes.</p>
+          </div>
+        </li>
+        <li class="phase-item">
+          <span class="phase-num">/cmo:cuts</span>
+          <div class="phase-content">
+            <strong>Cut the footage (footage films only).</strong>
+            <p>Working from its summary of your recording, you describe which parts
+              should be captured and what to highlight. The camera does the rest: for
+              each excerpt it finds the on-screen text the narrator names and zooms to
+              frame it, moving to the next region as the narration advances. You answer
+              one yes/no per shot: is the thing the narrator mentions readable and in
+              frame?</p>
+          </div>
+        </li>
+        <li class="phase-item">
+          <span class="phase-num">/cmo:assemble</span>
+          <div class="phase-content">
+            <strong>Let it work.</strong>
+            <p>The only stage that asks you nothing. Narration, timing, assembly, and a
+              battery of checks loop until the film is green — or you get a three-line
+              report of the one decision it needs.</p>
+          </div>
+        </li>
+        <li class="phase-item">
+          <span class="phase-num">/cmo:review</span>
+          <div class="phase-content">
+            <strong>Watch and direct.</strong>
+            <p>You get a watch copy before anything is final. Give notes the way a
+              director does — "the voice feels slow", "that label is wrong at 2:41" —
+              and a corrected cut comes back in minutes, with every earlier cut
+              preserved. When you're happy, your approval is recorded with your name,
+              bound to that exact cut.</p>
+          </div>
+        </li>
+        <li class="phase-item">
+          <span class="phase-num">/cmo:deliver</span>
+          <div class="phase-content">
+            <strong>Finish and hand over.</strong>
+            <p>The approved cut is rendered to the delivery standard, verified
+              frame-by-frame, and the producer writes the honest production record:
+              what was made, from what, approved by whom, reviewed by whom — or not.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="callout callout-advanced">
+        <div class="callout-label">What a session looks like</div>
+        Open a terminal in your film's folder, start Claude Code, type
+        <code>/cmo:new</code>, and answer its question. From there the flow carries you:
+        each command finishes by naming the next one, every <code>/cmo:*</code> command
+        answers <code>help</code>, and a stopped session resumes exactly where you left
+        off — the project folder holds all the state.
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════════ -->
+    <!-- TRUST                                                           -->
+    <!-- ══════════════════════════════════════════════════════════════ -->
+    <div class="chapter" id="trust">
+      <div class="chapter-number">Chapter 05</div>
+      <h2>Why You Can Trust What It Makes</h2>
+
+      <p class="lead">
+        A marketing film that overclaims is worse than no film. The studio's rules exist
+        to make honesty the path of least resistance — and most of them are enforced by
+        machinery, not by promises.
+      </p>
+
+      <table class="enf-table">
+        <tr><th>Promise</th><th>How it's kept</th></tr>
+        <tr>
+          <td>Your words only</td>
+          <td>You are the only source of claims. Reference material may lend terminology;
+            it never chooses the argument. Every narration sentence traces to you or to
+            the evidence register.</td>
+        </tr>
+        <tr>
+          <td>Evidence bounds claims</td>
+          <td>Each recording's register entry includes what it does <em>not</em> establish
+            — and that column is a hard boundary the script cannot cross.</td>
+        </tr>
+        <tr>
+          <td>Nothing leaves the machine</td>
+          <td>Footage, documents, and fonts never leave your computer — enforced, not
+            promised. The single exception is the narration text sent for voice
+            synthesis, and only after you approve that exact text.</td>
+        </tr>
+        <tr>
+          <td>Privacy by prevention</td>
+          <td>Excluded time ranges are enforced in the cutting machinery itself; a cut
+            that touches one fails to build. The privacy reviewer then reads what
+            remains, frame by frame.</td>
+        </tr>
+        <tr>
+          <td>Brand, licensed</td>
+          <td>The HPE Graphik fonts are internally licensed. They travel only inside the
+            studio's own packs, render only on your machine, and the machinery refuses
+            to let them be committed to any repository outside internal hosts. Films made
+            with this are for internal and HPE-sanctioned channels.</td>
+        </tr>
+        <tr>
+          <td>Only humans approve</td>
+          <td>No render happens without a recorded human approval bound to that exact
+            cut. Agents review; they are structurally unable to say yes.</td>
+        </tr>
+        <tr>
+          <td>"Done" means watched</td>
+          <td>A film is done when a named person has watched and listened to it and the
+            production record says so. Anything less is reported as "built and
+            technically verified; human review pending" — in those words.</td>
+        </tr>
+      </table>
+
+      <div class="pullquote">
+        Agents review every cut; only a human approves. The machinery refuses politely,
+        in plain English, and the record of what happened is written from receipts —
+        including the gaps.
+        <cite>The operating principle</cite>
+      </div>
+    </div>
+
+    <div class="footer">
+      The CMO Flow · Technical marketing films, end to end · October 2026
+    </div>
+
+  </div>
+
+  <script>
+    // Highlight the active tab while scrolling
+    const links = document.querySelectorAll('.toc-link');
+    const chapters = document.querySelectorAll('.chapter');
+    const byId = {};
+    links.forEach(l => { byId[l.getAttribute('href').slice(1)] = l; });
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          const link = byId[e.target.id];
+          if (link) link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    chapters.forEach(c => obs.observe(c));
+  </script>
+
+</body>
+
+</html>
