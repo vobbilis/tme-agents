@@ -8,7 +8,7 @@
 | Version | 0.2.0 (2026-10-04) |
 | Teammate doc | `docs/index.html` in THIS repo (GitHub-Pages-ready; moved from aigile 2026-10-05; owner decision stands: never cross-link it with the coding-flow docs) |
 | Owner | Suresh Vobbilisetty |
-| Location | repo `~/go/src/github.com/vobbilis/codegen/tme-team/` (canonical since 2026-10-05); `~/.claude/plugins/cmo-plugin` is a symlink to it, so launchers and every documented path keep working |
+| Location | repo `~/go/src/github.com/vobbilis/codegen/tme-agents/` → github.com/vobbilis/tme-agents (public; canonical since 2026-10-05); `~/.claude/plugins/cmo-plugin` is a symlink to it, so launchers and every documented path keep working |
 | Working state | `metrics-dashboard/HANDOVER.md` §A (local-only) |
 | Memory | `cmo-plugin-and-reel-portfolio.md`, `hyperframes-style-packs.md` |
 
