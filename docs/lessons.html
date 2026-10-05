@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Field Notes — What Seven Films Taught Us</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap');
+
+    :root {
+      --ink: #1a1a1a;
+      --paper: #f5f2eb;
+      --cream: #ede9df;
+      --rule: #d4cfc2;
+      --accent: #c84b2f;
+      --blue: #2a5fa5;
+      --green: #2d7a4f;
+      --gold: #b08a2e;
+      --muted: #7a7468;
+      --teal: #1f7a8c;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.7;
+      padding: 0;
+    }
+
+    /* ── Masthead ── */
+    .masthead {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 64px 48px 56px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .masthead::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: repeating-linear-gradient(0deg,
+          transparent, transparent 39px,
+          rgba(255, 255, 255, 0.04) 39px, rgba(255, 255, 255, 0.04) 40px);
+      pointer-events: none;
+    }
+
+    .masthead-inner { max-width: 900px; margin: 0 auto; position: relative; }
+
+    .masthead-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .masthead h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 300;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .masthead h1 em { font-style: italic; color: #c8c4b8; }
+
+    .masthead-sub {
+      font-size: 18px;
+      font-weight: 300;
+      color: #9c9890;
+      max-width: 620px;
+      line-height: 1.5;
+    }
+
+    .masthead-meta { margin-top: 40px; display: flex; gap: 32px; flex-wrap: wrap; }
+
+    .meta-item {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: #6a6860;
+      text-transform: uppercase;
+    }
+
+    .meta-item span {
+      color: #c8c4b8;
+      display: block;
+      font-size: 13px;
+      letter-spacing: 0;
+      margin-top: 2px;
+      text-transform: none;
+    }
+
+    /* ── TOC ── */
+    .toc-bar {
+      background: var(--cream);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 48px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .toc-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+    }
+
+    .toc-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 14px 16px;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .toc-link:hover, .toc-link.active { color: var(--ink); border-color: var(--accent); }
+
+    .toc-arch-group {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-left: 12px;
+      padding-left: 16px;
+      border-left: 1px solid var(--rule);
+      align-self: stretch;
+    }
+
+    .toc-arch-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--paper);
+      background: var(--ink);
+      padding: 3px 7px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-right: 4px;
+    }
+
+    .toc-link-ext {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--blue);
+      text-decoration: none;
+      padding: 5px 10px;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      white-space: nowrap;
+      transition: color 0.15s, background 0.15s, border-color 0.15s;
+      align-self: center;
+    }
+
+    .toc-link-ext:hover { color: var(--paper); background: var(--blue); border-color: var(--blue); }
+
+    /* ── Page body ── */
+    .page { max-width: 900px; margin: 0 auto; padding: 0 48px 80px; }
+
+    .chapter { margin-top: 80px; padding-top: 48px; border-top: 2px solid var(--ink); }
+
+    .chapter-number {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .chapter h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 300;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+
+    .chapter-cmd {
+      font-family: 'DM Mono', monospace;
+      font-size: 14px;
+      color: var(--accent);
+      background: rgba(200, 75, 47, 0.08);
+      padding: 4px 10px;
+      border-radius: 3px;
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+
+    .section { margin-top: 48px; }
+
+    .section h3 {
+      font-size: 21px;
+      font-weight: 400;
+      letter-spacing: -0.3px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    p { margin-bottom: 16px; color: #2a2820; }
+
+    .lead {
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 28px;
+      padding-left: 20px;
+      border-left: 3px solid var(--rule);
+      line-height: 1.5;
+    }
+
+    .pullquote {
+      margin: 40px 0;
+      padding: 24px 32px;
+      background: var(--cream);
+      border-left: 4px solid var(--accent);
+      font-size: 19px;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .pullquote cite {
+      display: block;
+      font-size: 12px;
+      font-style: normal;
+      font-family: 'DM Mono', monospace;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .enf-table {
+      display: block;
+      overflow-x: auto;
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+      margin: 24px 0;
+    }
+
+    .enf-table th {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: left;
+      padding: 8px 12px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .enf-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--rule);
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    .enf-table tr:hover td { background: var(--cream); }
+
+    .enf-table td:first-child {
+      font-family: 'DM Mono', monospace;
+      font-size: 15px;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .skill-card {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 16px 18px;
+    }
+
+    .skill-card .skill-name {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .skill-card .skill-where {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+      font-style: italic;
+    }
+
+    .skill-card .skill-rule { font-size: 13px; line-height: 1.5; color: var(--ink); }
+
+    code {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85em;
+      background: rgba(0, 0, 0, 0.07);
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+
+    .phase-list { list-style: none; margin: 24px 0; }
+
+    .phase-item {
+      display: flex;
+      gap: 20px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: flex-start;
+    }
+
+    .phase-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      background: rgba(200, 75, 47, 0.08);
+      padding: 4px 8px;
+      border-radius: 3px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      letter-spacing: 1px;
+      white-space: nowrap;
+      min-width: 132px;
+      text-align: center;
+    }
+
+    .phase-content strong {
+      display: block;
+      font-weight: 400;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .phase-content p { font-size: 14px; color: var(--muted); margin: 0; line-height: 1.5; }
+
+    .callout { border-radius: 4px; padding: 18px 22px; margin: 24px 0; font-size: 15px; line-height: 1.6; }
+    .callout-novice { background: rgba(42, 95, 165, 0.07); border-left: 3px solid var(--blue); }
+    .callout-advanced { background: rgba(45, 122, 79, 0.07); border-left: 3px solid var(--green); }
+
+    .callout-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .callout-novice .callout-label { color: var(--blue); }
+    .callout-advanced .callout-label { color: var(--green); }
+
+    .cmd-trio {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 32px 0;
+    }
+
+    .cmd-card { background: var(--cream); padding: 24px; text-align: center; }
+    .cmd-card .cmd-name { font-family: 'DM Mono', monospace; font-size: 14px; color: var(--accent); margin-bottom: 8px; }
+    .cmd-card .cmd-arrow { font-size: 24px; color: var(--rule); margin: 8px 0; }
+    .cmd-card .cmd-artifact { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--teal); margin-bottom: 10px; }
+    .cmd-card .cmd-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    @media (max-width: 720px) {
+      .cmd-trio { grid-template-columns: 1fr; }
+      .masthead, .toc-bar { padding-left: 24px; padding-right: 24px; }
+      .page { padding-left: 24px; padding-right: 24px; }
+    }
+
+    .footer {
+      margin-top: 80px;
+      padding-top: 24px;
+      border-top: 2px solid var(--ink);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+  </style>
+  <style>
+    .lesson {
+      display: flex;
+      gap: 20px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: flex-start;
+    }
+    .lesson-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      padding: 4px 8px;
+      border-radius: 3px;
+      flex-shrink: 0;
+      margin-top: 3px;
+      letter-spacing: 1px;
+      min-width: 42px;
+      text-align: center;
+    }
+    .lesson p { margin: 0; font-size: 16px; line-height: 1.65; }
+    .lesson p em.rule { font-style: normal; color: var(--green); }
+  </style>
+</head>
+
+<body>
+
+  <div class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-eyebrow">Creative Flow · Field Notes</div>
+      <h1>What Seven Films <em>Taught Us</em></h1>
+      <div class="masthead-sub">
+        The studio's rules were not designed on a whiteboard. Each one was learned on a
+        real production, usually by getting it wrong first. These are the field notes —
+        what happened, and what the rule is now.
+      </div>
+      <div class="masthead-meta">
+        <div class="meta-item">Source<span>Seven delivered films · 2026</span></div>
+        <div class="meta-item">Full record<span><a href="https://github.com/vobbilis/tme-agents/blob/main/DESIGN.md"
+          style="color:#c8c4b8;text-decoration:none;" onmouseover="this.style.color='#f5f2eb'"
+          onmouseout="this.style.color='#c8c4b8'">All 51 lessons, in DESIGN.md</a></span></div>
+        <div class="meta-item">This page<span>The eighteen with the best scars</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toc-bar">
+    <div class="toc-inner">
+      <a class="toc-link" href="#story">Story &amp; Claims</a>
+      <a class="toc-link" href="#voice">Voice &amp; Timing</a>
+      <a class="toc-link" href="#footage">Footage</a>
+      <a class="toc-link" href="#finishing">Finishing &amp; Honesty</a>
+      <a class="toc-link" href="#fresh">Still Learning</a>
+      <div class="toc-arch-group">
+        <span class="toc-arch-label">About ›</span>
+        <a class="toc-link-ext" href="index.html">Overview</a>
+        <a class="toc-link-ext" href="install.html">Install</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="page">
+
+    <div class="chapter" id="story">
+      <div class="chapter-number">Field Notes · 01</div>
+      <h2>Story &amp; Claims</h2>
+      <p class="lead">
+        Every rejected cut in seven productions was a story or claims problem. Not one
+        was a technical failure.
+      </p>
+
+      <div class="lesson"><span class="lesson-num">01</span><p>
+        The first evidence film opened on a ticket. The review called it a
+        challenge-response pitch, and the cut was redone from the top.
+        <em class="rule">Films open on the idea, and close by returning to it.</em>
+      </p></div>
+
+      <div class="lesson"><span class="lesson-num">02</span><p>
+        A seven-minute engineering film led with repository statistics — commit counts,
+        contributor names, test totals. The owner rejected the entire film. The approved
+        version led with how the organization works, and let working screens show the
+        activity instead of asserting it.
+        <em class="rule">Lead with the change, never the audit.</em>
+      </p></div>
+
+      <div class="lesson"><span class="lesson-num">03</span><p>
+        One production ended with the push blocked by access controls. The film kept it:
+        "Local commit retained. Push access blocked." Those frames turned out to be the
+        most persuasive in the film, because a slide cannot fake them.
+        <em class="rule">The real outcome stays in, especially when it is a failure.</em>
+      </p></div>
+
+      <div class="lesson"><span class="lesson-num">04</span><p>
+        An early cut hedged every sentence — "the page describes the standard, not proof
+        that…" — until the hedging was the loudest thing in the film.
+        <em class="rule">A limitation is said once, where it changes the next decision, and
+        not again.</em>
+      </p></div>
+
+      <div class="lesson"><span class="lesson-num">05</span><p>
+        A fifteen-minute film about engineering productivity reports zero productivity
+        numbers, and says why in one sentence: there was no comparable baseline to
+        measure against.
+        <em class="rule">A number needs a source, an interval, a definition and a
+        denominator — or it is not said.</em>
+      </p></div>
+
+      <div class="lesson"><span class="lesson-num">06</span><p>
+        The owner confirmed three engineers; the footage showed three recordings. The
+        narration says "engineer three takes up the implementation" — and never implies
+        the handover itself was filmed, because it wasn't.
+        <em class="rule">People are not agents, and recordings are not handovers.</em>
+      </p></div>
+
+      <div class="lesson"><span class="lesson-num">07</span><p>
+        A film was briefed from a voice memo. The transcript heard "glass wing" where the
+        owner had said something else entirely, so the film said "shared security
+        harness" until the owner confirmed the real name.
+        <em class="rule">Unconfirmed names stay generic. The owner's words are the only
+        claims source.</em>
+      </p></div>
+    </div>
+
+    <div class="chapter" id="voice">
+      <div class="chapter-number">Field Notes · 02</div>
+      <h2>Voice &amp; Timing</h2>
+      <p class="lead">
+        The narrator's word timings are the film's clock. Everything that drifted,
+        drifted because something ignored that.
+      </p>
+
+      <div class="lesson"><span class="lesson-num">08</span><p>
+        The narrator pronounced "SecOps" as "Secretary Ops". No one caught it by reading —
+        it was caught by running speech recognition on the actual audio and comparing
+        what was heard against what was written.
+        <em class="rule">Pronunciation is verified by listening, never by trusting the
+        text.</em>
+      </p></div>
+
+      <div class="lesson"><span class="lesson-num">09</span><p>
+        A seven-minute film drifted eight seconds between picture and voice by the end,
+        because wall-clock pacing was trusted. The fix measured the actual recording of
+        every scene and corrected each one individually.
+        <em class="rule">Measured speech sets durations. Estimates don't.</em>
+      </p></div>
+
+      <div class="lesson"><span class="lesson-num">10</span><p>
+        Every on-screen reveal is tied to a three-to-six-word phrase from that scene's
+        narration, and the build fails if the phrase appears twice or not at all. Change
+        one sentence and everything downstream re-times itself.
+        <em class="rule">Reveals land on spoken words, not on guessed seconds.</em>
+      </p></div>
+    </div>
+
+    <div class="chapter" id="footage">
+      <div class="chapter-number">Field Notes · 03</div>
+      <h2>Footage</h2>
+      <p class="lead">
+        Footage is the one thing a slide cannot fake — which is exactly why nothing about
+        it may be faked.
+      </p>
+
+      <div class="lesson"><span class="lesson-num">11</span><p>
+        Two cuts used highlight rectangles that followed the on-screen text, with camera
+        pans between them. The review called them distracting. The third cut shipped with
+        zero rectangles and one fixed, readable framing per excerpt.
+        <em class="rule">The camera frames once and holds. Emphasis comes from the
+        narration, not from motion.</em>
+      </p></div>
+
+      <div class="lesson"><span class="lesson-num">12</span><p>
+        No excerpt has ever been sped up, slowed down, or looped — even when real work
+        meant watching a progress bar.
+        <em class="rule">Footage plays at real speed. If it is too long, cut it shorter;
+        don't make it lie.</em>
+      </p></div>
+
+      <div class="lesson"><span class="lesson-num">13</span><p>
+        A held frame looks identical to playing footage. A sped-up excerpt looks like a
+        fast product. Viewers can't tell the difference, so the films tell them: HELD
+        FRAME, EDITED EXCERPTS, RECORDING PENDING — in amber, on screen.
+        <em class="rule">Anything a viewer could misread gets a label.</em>
+      </p></div>
+
+      <div class="lesson"><span class="lesson-num">14</span><p>
+        One source recording contained a lock screen at minute twenty; a later one caught
+        a window with colleagues' names. Both became exclusion ranges written into the
+        cutting machinery itself — a cut that touches one fails to build, rather than
+        depending on an editor's memory.
+        <em class="rule">Privacy boundaries are code, not notes.</em>
+      </p></div>
+
+      <div class="lesson"><span class="lesson-num">15</span><p>
+        A capture session once exposed a real product bug mid-recording. The film did not
+        fix it, hide it, or fake around it: the bug was written up, and the capture took
+        a different legitimate path through the product.
+        <em class="rule">A bug found on camera is documented and routed around — never
+        repaired for the film.</em>
+      </p></div>
+
+      <div class="lesson"><span class="lesson-num">16</span><p>
+        The automated product-capture adapter refuses to film anything except instances
+        running fabricated demo data — the check is in the code, not in a guideline.
+        Real day-to-day usage is recorded by its owner, and reviewed for privacy frame
+        by frame.
+        <em class="rule">Live systems with real data are never filmed by automation.</em>
+      </p></div>
+    </div>
+
+    <div class="chapter" id="finishing">
+      <div class="chapter-number">Field Notes · 04</div>
+      <h2>Finishing &amp; Honesty</h2>
+      <p class="lead">
+        The last mile is where polished tools quietly overclaim. These rules keep the
+        record straight.
+      </p>
+
+      <div class="lesson"><span class="lesson-num">17</span><p>
+        Every film's verification report ends the same way: the checks passed, and a
+        complete watch-and-listen by a named human is still required. The production
+        record will print "human review: NOT RECORDED" — in those words — rather than
+        round up to done.
+        <em class="rule">Done means a named person watched and listened. Machines never
+        approve a film.</em>
+      </p></div>
+
+      <div class="lesson"><span class="lesson-num">18</span><p>
+        An owner once said "finish without further approval stops," and the production
+        honored it — by recording those exact words, with a timestamp, in the approval
+        itself, where the final record prints them.
+        <em class="rule">Authority can skip a gate. The skip is quoted verbatim,
+        forever.</em>
+      </p></div>
+    </div>
+
+    <div class="chapter" id="fresh">
+      <div class="chapter-number">Field Notes · 05</div>
+      <h2>Still Learning</h2>
+      <p class="lead">
+        Some of these notes are from this month, learned while building the studio
+        itself. The method doesn't retire.
+      </p>
+
+      <div class="lesson"><span class="lesson-num">+1</span><p>
+        The studio's first reference film was commissioned at exactly fifteen minutes —
+        and that shape quietly fossilized into the tooling as hardcoded constants. The
+        owner caught it with one question: "shouldn't this come from the interview?"
+        Lengths, scene counts and act structure now come only from the brief and the
+        screenplay.
+        <em class="rule">A constant inherited from a reference film is a bug.</em>
+      </p></div>
+
+      <div class="lesson"><span class="lesson-num">+2</span><p>
+        For weeks the project repeated that a preview tool's audio "was unreliable on two
+        runs". The owner corrected the record: the audio was fine — the operator hadn't
+        learned the playback controls. Every document that carried the claim was fixed
+        the same day.
+        <em class="rule">The claims discipline applies to our own documentation.</em>
+      </p></div>
+
+      <div class="lesson"><span class="lesson-num">+3</span><p>
+        The first film made by the studio itself got a one-line review from its owner:
+        "the voice somehow feels slow." The note became a recorded disposition, the pace
+        changed, and a corrected cut existed minutes later — with the first cut preserved
+        untouched.
+        <em class="rule">A review note is a change of the words, and everything else
+        regenerates.</em>
+      </p></div>
+    </div>
+
+    <div class="footer">
+      The CMO Flow · Field Notes · September 2026
+    </div>
+
+  </div>
+
+  <script>
+    const links = document.querySelectorAll('.toc-link');
+    const chapters = document.querySelectorAll('.chapter');
+    const byId = {};
+    links.forEach(l => { byId[l.getAttribute('href').slice(1)] = l; });
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          const link = byId[e.target.id];
+          if (link) link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    chapters.forEach(c => obs.observe(c));
+  </script>
+
+</body>
+
+</html>
