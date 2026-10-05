@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Install — The CMO Flow</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap');
+
+    :root {
+      --ink: #1a1a1a;
+      --paper: #f5f2eb;
+      --cream: #ede9df;
+      --rule: #d4cfc2;
+      --accent: #c84b2f;
+      --blue: #2a5fa5;
+      --green: #2d7a4f;
+      --gold: #b08a2e;
+      --muted: #7a7468;
+      --teal: #1f7a8c;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.7;
+      padding: 0;
+    }
+
+    /* ── Masthead ── */
+    .masthead {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 64px 48px 56px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .masthead::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: repeating-linear-gradient(0deg,
+          transparent, transparent 39px,
+          rgba(255, 255, 255, 0.04) 39px, rgba(255, 255, 255, 0.04) 40px);
+      pointer-events: none;
+    }
+
+    .masthead-inner { max-width: 900px; margin: 0 auto; position: relative; }
+
+    .masthead-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .masthead h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 300;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .masthead h1 em { font-style: italic; color: #c8c4b8; }
+
+    .masthead-sub {
+      font-size: 18px;
+      font-weight: 300;
+      color: #9c9890;
+      max-width: 620px;
+      line-height: 1.5;
+    }
+
+    .masthead-meta { margin-top: 40px; display: flex; gap: 32px; flex-wrap: wrap; }
+
+    .meta-item {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: #6a6860;
+      text-transform: uppercase;
+    }
+
+    .meta-item span {
+      color: #c8c4b8;
+      display: block;
+      font-size: 13px;
+      letter-spacing: 0;
+      margin-top: 2px;
+      text-transform: none;
+    }
+
+    /* ── TOC ── */
+    .toc-bar {
+      background: var(--cream);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 48px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .toc-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+    }
+
+    .toc-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 14px 16px;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .toc-link:hover, .toc-link.active { color: var(--ink); border-color: var(--accent); }
+
+    .toc-arch-group {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-left: 12px;
+      padding-left: 16px;
+      border-left: 1px solid var(--rule);
+      align-self: stretch;
+    }
+
+    .toc-arch-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--paper);
+      background: var(--ink);
+      padding: 3px 7px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-right: 4px;
+    }
+
+    .toc-link-ext {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--blue);
+      text-decoration: none;
+      padding: 5px 10px;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      white-space: nowrap;
+      transition: color 0.15s, background 0.15s, border-color 0.15s;
+      align-self: center;
+    }
+
+    .toc-link-ext:hover { color: var(--paper); background: var(--blue); border-color: var(--blue); }
+
+    /* ── Page body ── */
+    .page { max-width: 900px; margin: 0 auto; padding: 0 48px 80px; }
+
+    .chapter { margin-top: 80px; padding-top: 48px; border-top: 2px solid var(--ink); }
+
+    .chapter-number {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .chapter h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 300;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+
+    .chapter-cmd {
+      font-family: 'DM Mono', monospace;
+      font-size: 14px;
+      color: var(--accent);
+      background: rgba(200, 75, 47, 0.08);
+      padding: 4px 10px;
+      border-radius: 3px;
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+
+    .section { margin-top: 48px; }
+
+    .section h3 {
+      font-size: 21px;
+      font-weight: 400;
+      letter-spacing: -0.3px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    p { margin-bottom: 16px; color: #2a2820; }
+
+    .lead {
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 28px;
+      padding-left: 20px;
+      border-left: 3px solid var(--rule);
+      line-height: 1.5;
+    }
+
+    .pullquote {
+      margin: 40px 0;
+      padding: 24px 32px;
+      background: var(--cream);
+      border-left: 4px solid var(--accent);
+      font-size: 19px;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .pullquote cite {
+      display: block;
+      font-size: 12px;
+      font-style: normal;
+      font-family: 'DM Mono', monospace;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .enf-table {
+      display: block;
+      overflow-x: auto;
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+      margin: 24px 0;
+    }
+
+    .enf-table th {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: left;
+      padding: 8px 12px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .enf-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--rule);
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    .enf-table tr:hover td { background: var(--cream); }
+
+    .enf-table td:first-child {
+      font-family: 'DM Mono', monospace;
+      font-size: 15px;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .skill-card {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 16px 18px;
+    }
+
+    .skill-card .skill-name {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .skill-card .skill-where {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+      font-style: italic;
+    }
+
+    .skill-card .skill-rule { font-size: 13px; line-height: 1.5; color: var(--ink); }
+
+    code {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85em;
+      background: rgba(0, 0, 0, 0.07);
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+
+    .phase-list { list-style: none; margin: 24px 0; }
+
+    .phase-item {
+      display: flex;
+      gap: 20px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: flex-start;
+    }
+
+    .phase-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      background: rgba(200, 75, 47, 0.08);
+      padding: 4px 8px;
+      border-radius: 3px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .phase-content strong {
+      display: block;
+      font-weight: 400;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .phase-content p { font-size: 14px; color: var(--muted); margin: 0; line-height: 1.5; }
+
+    .callout { border-radius: 4px; padding: 18px 22px; margin: 24px 0; font-size: 15px; line-height: 1.6; }
+    .callout-novice { background: rgba(42, 95, 165, 0.07); border-left: 3px solid var(--blue); }
+    .callout-advanced { background: rgba(45, 122, 79, 0.07); border-left: 3px solid var(--green); }
+
+    .callout-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .callout-novice .callout-label { color: var(--blue); }
+    .callout-advanced .callout-label { color: var(--green); }
+
+    .cmd-trio {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 32px 0;
+    }
+
+    .cmd-card { background: var(--cream); padding: 24px; text-align: center; }
+    .cmd-card .cmd-name { font-family: 'DM Mono', monospace; font-size: 14px; color: var(--accent); margin-bottom: 8px; }
+    .cmd-card .cmd-arrow { font-size: 24px; color: var(--rule); margin: 8px 0; }
+    .cmd-card .cmd-artifact { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--teal); margin-bottom: 10px; }
+    .cmd-card .cmd-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    @media (max-width: 720px) {
+      .cmd-trio { grid-template-columns: 1fr; }
+      .masthead, .toc-bar { padding-left: 24px; padding-right: 24px; }
+      .page { padding-left: 24px; padding-right: 24px; }
+    }
+
+    .footer {
+      margin-top: 80px;
+      padding-top: 24px;
+      border-top: 2px solid var(--ink);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-eyebrow">Creative Flow · Getting Started</div>
+      <h1>Fifteen Minutes to <em>Your Studio</em></h1>
+      <div class="masthead-sub">
+        Everything needed to go from a bare Mac to typing /cmo:new in your own
+        Claude Code. Most of the time is spent waiting for installs; none of it
+        requires knowing anything about video, audio, or plugins.
+      </div>
+      <div class="masthead-meta">
+        <div class="meta-item">You need<span>A Mac · Claude Code · internal font access</span></div>
+        <div class="meta-item">Time<span>About 15 minutes</span></div>
+        <div class="meta-item">
+          Repository
+          <span>
+            <a href="https://github.com/vobbilis/tme-agents" target="_blank"
+              style="color:#c8c4b8;text-decoration:none;display:flex;align-items:center;gap:6px;margin-top:2px;"
+              onmouseover="this.style.color='#f5f2eb'" onmouseout="this.style.color='#c8c4b8'">
+              <svg height="14" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="14" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                </path>
+              </svg>
+              vobbilis/tme-agents
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toc-bar">
+    <div class="toc-inner">
+      <a class="toc-link" href="#tools">Tools</a>
+      <a class="toc-link" href="#folder">The Folder</a>
+      <a class="toc-link" href="#fonts">Fonts</a>
+      <a class="toc-link" href="#load">Load It</a>
+      <a class="toc-link" href="#verify">Verify</a>
+      <a class="toc-link" href="#first">Your First Film</a>
+      <div class="toc-arch-group">
+        <span class="toc-arch-label">About ›</span>
+        <a class="toc-link-ext" href="index.html">Overview</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="page">
+
+    <div class="chapter" id="tools">
+      <div class="chapter-number">Step 01</div>
+      <h2>Install the Tools</h2>
+      <p class="lead">
+        The studio leans on a few ordinary tools. One command installs them.
+      </p>
+      <p>You need a Mac with <a href="https://claude.com/claude-code">Claude Code</a>
+        already working. Then, in Terminal:</p>
+      <div class="chapter-cmd">brew install node uv ffmpeg</div>
+      <p>If you plan to make films from screen recordings, also install Apple's
+        command line tools — the studio uses them to read the text inside your
+        footage:</p>
+      <div class="chapter-cmd">xcode-select --install</div>
+      <div class="callout callout-novice">
+        <div class="callout-label">If something complains later</div>
+        A message about the Swift compiler and SDK being "out of step" means your
+        command line tools are older than your system. Open Software Update,
+        install the newest "Command Line Tools for Xcode" it offers, and the
+        complaint goes away.
+      </div>
+    </div>
+
+    <div class="chapter" id="folder">
+      <div class="chapter-number">Step 02</div>
+      <h2>Get the Studio Folder</h2>
+      <p class="lead">Clone the repository, or copy the folder from a colleague.
+        Where you put it doesn't matter.</p>
+      <div class="chapter-cmd">git clone https://github.com/vobbilis/tme-agents.git ~/tme-agents</div>
+      <p>The rest of this page assumes it lives at <code>~/tme-agents</code>.</p>
+    </div>
+
+    <div class="chapter" id="fonts">
+      <div class="chapter-number">Step 03</div>
+      <h2>Add the Fonts</h2>
+      <p class="lead">
+        The films use HPE's brand typeface. It is licensed for internal use, so
+        the font files are not in the repository — you copy them in once.
+      </p>
+      <p>Follow the short instructions in <code>packs/PROVISIONING.md</code>
+        inside the folder: four font files, copied into three places, taken from
+        any colleague's working install. The studio verifies the fonts before
+        building anything, so a mistake here is caught and explained in plain
+        words rather than discovered in a finished film.</p>
+    </div>
+
+    <div class="chapter" id="load">
+      <div class="chapter-number">Step 04</div>
+      <h2>Tell Claude Code About It</h2>
+      <p class="lead">Pick one of two ways. The simple one suits almost everyone.</p>
+      <ol class="phase-list">
+        <li class="phase-item">
+          <span class="phase-num">Simple</span>
+          <div class="phase-content">
+            <strong>Load it in every session.</strong>
+            <p>Link the folder into Claude Code's skills directory:
+              <code>mkdir -p ~/.claude/skills && ln -s ~/tme-agents ~/.claude/skills/cmo</code>
+              — the studio stays quietly out of the way when you aren't making a film.</p>
+          </div>
+        </li>
+        <li class="phase-item">
+          <span class="phase-num">Cautious</span>
+          <div class="phase-content">
+            <strong>Load it only when you ask.</strong>
+            <p>Start Claude Code with
+              <code>claude --plugin-dir ~/tme-agents</code>
+              whenever you want the studio available.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="chapter" id="verify">
+      <div class="chapter-number">Step 05</div>
+      <h2>Check It Worked</h2>
+      <p class="lead">One command tells you everything.</p>
+      <p>Start a new Claude Code session and type:</p>
+      <div class="chapter-cmd">/cmo:new help</div>
+      <p>You should see a usage page describing the three kinds of film and the
+        four-person review team. If Claude says it doesn't know that command, the
+        plugin didn't load — the usual cause is a typo in the path from step 04.</p>
+      <div class="callout callout-advanced">
+        <div class="callout-label">Two things worth knowing</div>
+        Everything you record and provide stays on your computer; the one
+        exception is the narration text, sent to Microsoft's voice service only
+        after you approve it in so many words. And the first time a film checks
+        its own narration, a small speech-recognition model downloads once — your
+        audio never leaves the machine for that check.
+      </div>
+    </div>
+
+    <div class="chapter" id="first">
+      <div class="chapter-number">Step 06</div>
+      <h2>Make Your First Film</h2>
+      <p class="lead">
+        Make a folder for the film, open Terminal there, start Claude Code, and
+        type <code>/cmo:new</code>. From that point the studio carries you.
+      </p>
+      <p>The full walkthrough of what making a film feels like — what you bring,
+        the four things you'll ever be asked to do, and what the studio refuses
+        to do — is on the <a href="index.html#howto">overview page</a>, with the
+        complete written version in
+        <a href="https://github.com/vobbilis/tme-agents/blob/main/HOWTO.md">HOWTO.md</a>.</p>
+    </div>
+
+    <div class="footer">
+      The CMO Flow · Installation · October 2026
+    </div>
+
+  </div>
+
+  <script>
+    const links = document.querySelectorAll('.toc-link');
+    const chapters = document.querySelectorAll('.chapter');
+    const byId = {};
+    links.forEach(l => { byId[l.getAttribute('href').slice(1)] = l; });
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          const link = byId[e.target.id];
+          if (link) link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    chapters.forEach(c => obs.observe(c));
+  </script>
+
+</body>
+
+</html>
