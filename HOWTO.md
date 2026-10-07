@@ -20,6 +20,13 @@ One of three things:
 - **A way of working** — a model, a method, a policy. Nothing to show on
   screen; the film illustrates it.
 
+Whichever you bring, also gather any documents that should ground the
+film — PDFs, PowerPoint decks, spec sheets — into the film's folder at the
+start. The studio reads them, and each one gets an explicit grade you
+confirm: what it may be used to support (names, principles, scope, product
+facts) and what it may not. A sales deck can lend the film its vocabulary;
+it never gets to make the film's claims or choose its argument.
+
 And about an hour of your attention, spread over the production in small
 pieces. You will never be asked to edit video, fix audio, or read an
 error trace. Everything you do is one of four things: answer a question,
@@ -75,7 +82,10 @@ by frame, and gives you a summary of what happens when, so you never have
 to scrub through an hour of footage. Together you write down what each
 recording shows, what it does *not* prove, and any seconds that must never
 appear (a lock screen, a colleague's name). Those boundaries are enforced
-by machinery afterwards, not by good intentions.
+by machinery afterwards, not by good intentions. Any PDFs and decks you
+gathered are read page by page, and you confirm one short table saying
+what each may ground and what it may not; from then on the film can cite
+"page 12 of the pricing deck" and the fact-checker can actually check it.
 
 **`/cmo:screenplay` — write the story together.** Scenes come to you a few
 at a time. Every line of narration is traced to something you said or

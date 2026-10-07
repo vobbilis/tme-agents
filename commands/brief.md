@@ -25,6 +25,10 @@ What it does
   1. deepens BRIEF.md one question at a time (audience, takeaway, length,
      claim boundary), applying the source hierarchy: your latest word >
      your memo > supplied documents > prior reels (style only)
+  1b. registers your PDFs and decks as GRADED sources: each gets an
+     extract with page/slide anchors and a register row saying what it
+     may ground (terminology, scope, product facts) and what it may not —
+     a document never chooses the film's argument
   2. accepts an audio memo as the brief source; transcripts are an aid,
      fallible on acronyms — unconfirmed names stay generic
   3. footage reels: probes every recording (ffprobe), asks what each shows,
@@ -98,6 +102,31 @@ For every recording in the reel folder (`*.mov`, `*.mp4` at the reel root):
    the claim boundary; exclusion ranges later become code in
    `prepare-footage` (lesson 23).
 5. **Stop** and ask the owner to confirm the register before going on.
+
+## Step 2b — Documents: register and GRADE them
+
+For every PDF and PowerPoint in the reel folder:
+
+1. Extract it so it can be cited and checked:
+   `uvx --with pypdf==6.19.0 --with python-pptx==1.0.2 python3 "${CLAUDE_PLUGIN_ROOT}/scripts/extract_source.py" <file> --output sources/<id>.extract.md`
+   The extract carries page/slide anchors and the original's hash. A
+   scan with no extractable text is reported plainly — ask the owner for
+   a text version.
+2. Draft ONE register row per document in EVIDENCE_REGISTER.md (a
+   "Documents" table): what it is, and — the column that matters — what
+   it MAY GROUND (terminology, principles, scope, product facts, dates)
+   and what it may NOT. Example: a sales deck grounds product names and
+   principles, never outcomes or metrics. The owner corrects and
+   confirms the table once, not row by row.
+3. A document never chooses the film's argument, whatever its grade —
+   that stays the owner's alone (the rule that cost a full cut).
+4. Register BOTH files in the receipt (original and extract), so a
+   drifted source invalidates its citations:
+   `… receipt.py add --reel <reel> --id doc-<id> --path <file>`
+   `… receipt.py add --reel <reel> --id doc-<id>-extract --path sources/<id>.extract.md`
+
+Narration cites a document as `[src:doc-<id>-p<n>]` (page) or
+`[src:doc-<id>-s<n>]` (slide); the fact-checker greps the extract.
 
 ## Step 3 — Freeze everything
 

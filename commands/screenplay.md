@@ -84,6 +84,7 @@ Points:
 - <conclusion ≤34 chars; max 3>          (footage/diagram right panel)
 Narration:
 > <sentence(s)>. [src:<register-row-or-owner-fact-id>]
+> <sentence grounded in a graded document>. [src:doc-<id>-p<n>]
 > <sentence(s) awaiting the owner>. [CHECK]
 Cues:
 - <3-6 word phrase copied verbatim from this scene's narration>

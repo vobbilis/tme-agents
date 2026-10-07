@@ -74,11 +74,17 @@ Your job is traceability and labelling, not verification.
 1. The owner's latest follow-up (title, framing, corrections).
 2. The owner's memo or conversation. A transcript is an aid, fallible on
    acronyms ("glass wing" → say "shared security harness").
-3. Supplied documents: principles, scope, ownership. If a document calls its
-   flow "future state" and its benefits "expected", so does the film.
+3. Supplied documents, GRADED in the register (owner decision 2026-10-06):
+   each registered PDF/deck carries a row saying what it may ground —
+   terminology, principles, scope, product facts, dates — and what it may
+   not. A citation `[src:doc-<id>-p<n>]` is valid only inside that grade.
+   If a document calls its flow "future state" and its benefits
+   "expected", so does the film.
 4. Prior reels: style and voice only, never evidence.
 
-Decks, PDFs and web pages are never a claims source.
+A document never chooses the film's argument, whatever its grade — the
+argument is the owner's alone (the rule that cost a full cut). An
+UNREGISTERED deck, PDF or web page is never a claims source at all.
 
 ## 6. Organization-first: the ban list (lesson 40)
 

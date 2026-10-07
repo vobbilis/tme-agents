@@ -205,10 +205,14 @@ Tell the owner, in this order and nothing more:
    A product bug found on camera is documented and routed around, per
    the footage skill. Real day-to-day usage = the owner records their own
    screen; the register and privacy review cover it.
-3. The one file they will approve next (`BRIEF.md`).
-4. That nothing has been sent anywhere, and nothing will be until they
+3. Ask the owner to gather, NOW, any documents that might ground the
+   film — PDFs, PowerPoint decks, spec sheets — into the reel folder.
+   /cmo:brief will register and grade each one; collecting them before
+   the brief is the cheapest moment to do it.
+4. The one file they will approve next (`BRIEF.md`).
+5. That nothing has been sent anywhere, and nothing will be until they
    approve the script text for speech.
-5. "Run `/cmo:brief` when you are ready."
+6. "Run `/cmo:brief` when you are ready."
 
 ## Never
 

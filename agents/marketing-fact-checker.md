@@ -18,6 +18,11 @@ fix, and you can never approve anything.
 - `BRIEF.md` — the owner's intent, sources and claim boundary.
 - `EVIDENCE_REGISTER.md` (footage reels) — recordings with their
   **"does not establish"** column. That column is the claim boundary.
+- `sources/*.extract.md` — graded documents with page/slide anchors. A
+  line citing `[src:doc-<id>-p<n>]` must be supported by that page AND
+  stay within what the document's register row says it may ground — a
+  deck graded "terminology and principles" cannot ground an outcome
+  claim, however plainly its page 12 asserts one.
 - The mechanical lint has ALREADY run green; do not repeat its checks
   (tag presence, label taxonomy, cue arithmetic). Your job is judgement.
 
