@@ -34,7 +34,9 @@ What it does
      fonts, .gitignore, form templates)
   3. verifies the toolchain and reports failures in plain English
   4. writes the first source-receipt.json (inputs are added by /cmo:brief)
-  5. tells you the next command: /cmo:brief
+  5. asks you to gather grounding material NOW — PDFs, decks, spec sheets —
+     into the reel folder; /cmo:brief reads and grades each one
+  6. tells you the next command: /cmo:brief
 
 What it never does
   send anything anywhere · install unpinned packages (npm ci only) ·
